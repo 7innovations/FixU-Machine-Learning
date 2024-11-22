@@ -3,7 +3,7 @@ import tensorflow as tf
 import pandas as pd
 import google.generativeai as genai
 
-API_KEY = "AIzaSyD-QJEvNLwfJnzmKsDiaCaObHxTluwfIQU"
+API_KEY = "AIzaSyAXeiHd67Fowc0DPfXKWBiOHXmnsUw87x8"
 genai.configure(api_key=API_KEY)
 
 generation_config = {
