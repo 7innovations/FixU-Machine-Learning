@@ -87,13 +87,13 @@ def predict(user_type):
                        'Family History of Mental Illness']:
                 df_input[col] = df_input[col].astype('category').cat.codes
             else:
-                df_input[col] = df_input[col].astype(float)
+                df_input[col] = df_input[col].astype(int)
     except Exception as e:
         return jsonify({'error': f'Preprocessing Error: {str(e)}'}), 400
 
     try:
         probabilities = model.predict(df_input)
-        probability = float(probabilities[0]) * 100
+        probability = int(probabilities[0]) * 100
         result = "Depression" if probability > 50 else "No Depression"
     except Exception as e:
         return jsonify({'error': f'Model Prediction Error: {str(e)}'}), 500
