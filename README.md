@@ -1,6 +1,6 @@
 # **FixU-Machine-Learning**
 
-A machine learning-based solution for mental health monitoring and depression detection. This repository contains models, training scripts, and other resources to support FixU's mental health tracking features.
+A machine learning-based solution for depression detection. This repository contains models, training scripts, and other resources to support the mental health detection feature of FixU.
 
 ---
 
