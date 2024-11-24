@@ -5,8 +5,8 @@ A machine learning-based solution for depression detection. This repository cont
 ---
 
 ## **Features**  
-- **Depression Detection**: Uses supervised learning to detect depression based on user activity.  
-- **Customizable Models**: Easily retrain models with updated data.
+- **Depression Detection**: Using supervised learning to detect depression based on user activity surveys.
+- **Feedback**: Retraining the Gemini AI model with updated data to provide more accurate and relevant feedback.
 
 ---
 
