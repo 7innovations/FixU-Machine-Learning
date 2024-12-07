@@ -9,19 +9,18 @@ from dotenv import load_dotenv
 
 
 load_dotenv()
-#Secret Key
+
 SECRET_KEY = os.getenv('SECRET_KEY')
 if not SECRET_KEY:
     raise ValueError("SECRET_KEY is not set in environment variables")
-#Api Key
+
 API_KEY = os.getenv('API_KEY')
 if not API_KEY:
     raise ValueError("API_KEY is not set in environment variables")
 
-# Konfigurasi API Key untuk Google Generative AI
+
 genai.configure(api_key=API_KEY)
 
-# Update konfigurasi generasi
 generation_config = {
     "temperature": 0.9,
     "top_p": 0.95,
@@ -29,7 +28,6 @@ generation_config = {
     "max_output_tokens": 2048,
 }
 
-# Inisialisasi model Gemini
 GEMINI_MODEL_NAME = "gemini-1.5-flash"
 gemini_model = genai.GenerativeModel(
     model_name=GEMINI_MODEL_NAME,
@@ -67,7 +65,6 @@ professional_features = {
 
 app = Flask(__name__)
 
-#JWT Token
 def verify_jwt(token):
     try:
         decoded = jwt.decode(token, SECRET_KEY, algorithms=["HS256"])
@@ -79,7 +76,7 @@ def verify_jwt(token):
 
 @app.before_request
 def check_token():
-    if request.endpoint not in ['home']:  # Tambahkan endpoint tanpa proteksi di sini
+    if request.endpoint not in ['home']:
         token = request.headers.get('Authorization')
         if not token or not token.startswith("Bearer "):
             return jsonify({'error': 'Invalid or missing token'}), 401
@@ -88,7 +85,6 @@ def check_token():
         if not decoded:
             return jsonify({'error': error}), 401
 
-#Start APP
 @app.route('/')
 def home():
     return "Welcome to FixU API!"
@@ -121,7 +117,6 @@ def predict(user_type):
 
         df_input = pd.DataFrame([input_data])
 
-        # Preprocessing
         for col in df_input.columns:
             if col in ['Gender', 'Dietary Habits', 'Sleep Duration', 'Have you ever had suicidal thoughts ?',
                       'Family History of Mental Illness']:
@@ -129,12 +124,10 @@ def predict(user_type):
             else:
                 df_input[col] = df_input[col].astype(float)
 
-        # Make prediction
         probabilities = model.predict(df_input)
         probability = float(probabilities[0]) * 100
         result = "Depression" if probability > 50 else "No Depression"
 
-        # Generate feedback
         feedback = generate_feedback(user_type, input_data, result, probability)
 
         return jsonify({
