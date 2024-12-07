@@ -21,6 +21,21 @@ A machine learning-based solution for depression detection. This repository cont
    pip install -r requirements.txt
    ```
 ---
+## **Docker Setup**
+To run the application using Docker, follow these steps:
+
+1. **Build the Docker image**:
+   ```bash
+   docker build -t fixu-machine-learning .
+   ```
+
+2. **Run the Docker container**:
+   ```bash
+   docker run -p 8080:8080 fixu-machine-learning
+   ```
+
+This will start the application and expose it on port 8080.
+---
 ## **Folder Structure**  
 ```plaintext
 FixU-Machine-Learning/
