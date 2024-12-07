@@ -1,5 +1,5 @@
 # **FixU-Machine-Learning**
-A machine learning-based solution for depression detection. This repository contains models, training scripts, and other resources to support the mental health detection feature of FixU.
+A machine learning-based solution for depression detection. This repository contains notebooks, models, and other resources to support FixU depression detection features.
 ---
 ## **Features**  
 - **Depression Detection**: Using supervised learning to detect depression based on user activity surveys.
@@ -31,7 +31,7 @@ FixU-Machine-Learning/
 │   ├── app.py          # API script for predictions
 ├── dataset/            # Dataset used for training and testing
 │   ├── depression.csv  # Labeled dataset for depression detection
-├── notebooks/          # Jupyter notebooks for model training and analysis
+├── notebooks/          # Jupyter notebooks for model training
 │   ├── nn_professional.ipynb  # Training notebook for professional model
 │   ├── nn_student.ipynb       # Training notebook for student model
 ├── README.md           # Project documentation
