@@ -51,4 +51,3 @@ FixU-Machine-Learning/
 │   ├── nn_student.ipynb        # Training notebook for student model
 ├── README.md                   # Project documentation
 ├── requirements.txt            # Dependencies
-```
