@@ -34,7 +34,7 @@ To run the application using Docker, follow these steps:
    docker run -p 8080:8080 fixu-machine-learning
    ```
 
-This will start the application and expose it on port 8080.
+This will start the application and expose it on port 8080
 ---
 ## **Folder Structure**  
 ```plaintext
