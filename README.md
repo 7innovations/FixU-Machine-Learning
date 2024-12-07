@@ -3,7 +3,7 @@ A machine learning-based solution for depression detection. This repository cont
 ---
 ## **Features**  
 - **Depression Detection**: Using supervised learning to detect depression based on user activity surveys.
-- **Feedback**: Retraining the Gemini AI model with updated data to provide more accurate and relevant feedback.
+- **Feedback**: Utilizing Retrieval-Augmented Generation (RAG) and retraining the Gemini AI model with updated data to provide more accurate and context-aware responses.
 ---
 ## **Installation**
 1. **Clone the repository**:  
@@ -24,16 +24,16 @@ A machine learning-based solution for depression detection. This repository cont
 ## **Folder Structure**  
 ```plaintext
 FixU-Machine-Learning/
-├── backend/            # Backend code for API and model deployment
-│   ├── models/         # Contains trained model files
+├── backend/                    # Backend code for API and model deployment
+│   ├── models/                 # Contains trained model files
 │   │   ├── nn_professional.h5  # Model for professionals
 │   │   ├── nn_student.h5       # Model for students
-│   ├── app.py          # API script for predictions
-├── dataset/            # Dataset used for training and testing
-│   ├── depression.csv  # Labeled dataset for depression detection
-├── notebooks/          # Jupyter notebooks for model training and analysis
-│   ├── nn_professional.ipynb  # Training notebook for professional model
-│   ├── nn_student.ipynb       # Training notebook for student model
-├── README.md           # Project documentation
-├── requirements.txt    # Dependencies
+│   ├── app.py                  # API script for predictions
+├── dataset/                    # Dataset used for training and testing
+│   ├── depression.csv          # Labeled dataset for depression detection
+├── notebooks/                  # Jupyter notebooks for model training and analysis
+│   ├── nn_professional.ipynb   # Training notebook for professional model
+│   ├── nn_student.ipynb        # Training notebook for student model
+├── README.md                   # Project documentation
+├── requirements.txt            # Dependencies
 ```
