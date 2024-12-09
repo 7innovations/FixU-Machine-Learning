@@ -61,7 +61,6 @@ FixU-Machine-Learning/
 │   │   ├── nn_professional.h5
 │   │   ├── nn_student.h5
 │   ├── app.py
-│   └── utils.py
 ├── dataset/
 │   ├── depression.csv
 ├── notebooks/
