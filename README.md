@@ -56,21 +56,21 @@ This will start the application and expose it on **port 8080**.
 
 ```plaintext
 FixU-Machine-Learning/
-├── backend/                    # Backend code for API and model deployment
-│   ├── models/                 # Pre-trained and fine-tuned model files
-│   │   ├── nn_professional.h5  # Model trained for professional demographics
-│   │   ├── nn_student.h5       # Model trained for student demographics
-│   ├── app.py                  # API script for handling predictions
-│   └── utils.py                # Helper functions for preprocessing and predictions
-├── dataset/                    # Datasets used for training and testing
-│   ├── depression.csv          # Labeled dataset for depression detection
-├── notebooks/                  # Jupyter notebooks for exploratory analysis and model training
-│   ├── nn_professional.ipynb   # Training notebook for professional demographic model
-│   ├── nn_student.ipynb        # Training notebook for student demographic model
-├── requirements.txt            # Python dependencies
-├── Dockerfile                  # Docker configuration
-├── README.md                   # Project documentation
-└── .gitignore                  # Ignored files and directories
+├── backend/
+│   ├── models/
+│   │   ├── nn_professional.h5
+│   │   ├── nn_student.h5
+│   ├── app.py
+│   └── utils.py
+├── dataset/
+│   ├── depression.csv
+├── notebooks/
+│   ├── nn_professional.ipynb
+│   ├── nn_student.ipynb
+├── requirements.txt
+├── Dockerfile
+├── README.md
+└── .gitignore
 ```
 
 ---
