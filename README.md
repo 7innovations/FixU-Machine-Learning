@@ -6,7 +6,7 @@
 
 ## **Features**  
 
-- **Depression Detection**: Implements supervised learning algorithms to identify signs of depression based on user activity surveys.  
+- **Depression Detection**: Implementing a Neural Network to predict depression based on user input. 
 - **Feedback Loop**: Utilizes **Retrieval-Augmented Generation (RAG)** and retrains the **Gemini AI model** with updated data to ensure accurate and context-aware responses.  
 
 ---
