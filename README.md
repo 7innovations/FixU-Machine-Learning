@@ -94,12 +94,3 @@ All required dependencies are listed in `requirements.txt`. Key dependencies inc
 - **scikit-learn**: For preprocessing and evaluation metrics.  
 
 ---
-
-## **Contributing**
-
-Contributions are welcome! If you'd like to improve this project:  
-
-1. Fork the repository.  
-2. Create a feature branch.  
-3. Commit your changes.  
-4. Submit a pull request.  
