@@ -61,15 +61,16 @@ FixU-Machine-Learning/
 │   │   ├── nn_professional.h5
 │   │   ├── nn_student.h5
 │   ├── app.py
+|   ├── Dockerfile
+|   └── .gitignore
 ├── dataset/
 │   ├── depression.csv
 ├── notebooks/
 │   ├── nn_professional.ipynb
 │   ├── nn_student.ipynb
 ├── requirements.txt
-├── Dockerfile
-├── README.md
-└── .gitignore
+└── README.md
+
 ```
 
 ---
