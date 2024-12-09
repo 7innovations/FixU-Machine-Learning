@@ -1,6 +1,6 @@
 # **FixU Machine Learning**
 
-**FixU Machine Learning** is a machine learning-powered solution designed to detect depression and support mental health initiatives. This repository contains machine learning models, training scripts, and deployment resources to provide seamless integration with the FixU platform.
+**FixU Machine Learning** is a deep learning-powered solution designed to detect depression and support mental health initiatives. This repository contains machine learning models, training scripts, and deployment resources to provide seamless integration with the FixU platform.
 
 ---
 
