@@ -1,54 +1,105 @@
-# **FixU-Machine-Learning**
-A machine learning-based solution for depression detection. This repository contains models, training scripts, and other resources to support the mental health detection feature of FixU.
+# **FixU Machine Learning**
+
+**FixU Machine Learning** is a machine learning-powered solution designed to detect depression and support mental health initiatives. This repository contains machine learning models, training scripts, and deployment resources to provide seamless integration with the FixU platform.
+
 ---
+
 ## **Features**  
-- **Depression Detection**: Using supervised learning to detect depression based on user activity surveys.
-- **Feedback**: Utilizing Retrieval-Augmented Generation (RAG) and retraining the Gemini AI model with updated data to provide more accurate and context-aware responses.
+
+- **Depression Detection**: Implements supervised learning algorithms to identify signs of depression based on user activity surveys.  
+- **Feedback Loop**: Utilizes **Retrieval-Augmented Generation (RAG)** and retrains the **Gemini AI model** with updated data to ensure accurate and context-aware responses.  
+
 ---
+
 ## **Installation**
-1. **Clone the repository**:  
-   ```bash
-   git clone https://github.com/7Innovations/FixU-Machine-Learning.git
-   cd FixU-Machine-Learning
-   ```
-2. **Set up a virtual environment**:
-   ```bash
-   python -m venv venv
-   source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
-   ```
-3. **Install dependencies**:
-   ```bash
-   pip install -r requirements.txt
-   ```
+
+To set up the project locally, follow these steps:
+
+### 1. Clone the Repository  
+```bash
+git clone https://github.com/7Innovations/FixU-Machine-Learning.git
+cd FixU-Machine-Learning
+```
+
+### 2. Set Up a Virtual Environment  
+```bash
+python -m venv venv
+source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
+```
+
+### 3. Install Dependencies  
+```bash
+pip install -r requirements.txt
+```
+
 ---
+
 ## **Docker Setup**
-To run the application using Docker, follow these steps:
 
-1. **Build the Docker image**:
-   ```bash
-   docker build -t fixu-machine-learning .
-   ```
+You can also run the application using **Docker** for a containerized and platform-independent environment.
 
-2. **Run the Docker container**:
-   ```bash
-   docker run -p 8080:8080 fixu-machine-learning
-   ```
+### 1. Build the Docker Image  
+```bash
+docker build -t fixu-machine-learning .
+```
 
-This will start the application and expose it on port 8080
+### 2. Run the Docker Container  
+```bash
+docker run -p 8080:8080 fixu-machine-learning
+```
+
+This will start the application and expose it on **port 8080**.
+
 ---
+
 ## **Folder Structure**  
+
 ```plaintext
 FixU-Machine-Learning/
 ├── backend/                    # Backend code for API and model deployment
-│   ├── models/                 # Contains trained model files
-│   │   ├── nn_professional.h5  # Model for professionals
-│   │   ├── nn_student.h5       # Model for students
-│   ├── app.py                  # API script for predictions
-├── dataset/                    # Dataset used for training and testing
+│   ├── models/                 # Pre-trained and fine-tuned model files
+│   │   ├── nn_professional.h5  # Model trained for professional demographics
+│   │   ├── nn_student.h5       # Model trained for student demographics
+│   ├── app.py                  # API script for handling predictions
+│   └── utils.py                # Helper functions for preprocessing and predictions
+├── dataset/                    # Datasets used for training and testing
 │   ├── depression.csv          # Labeled dataset for depression detection
-├── notebooks/                  # Jupyter notebooks for model training and analysis
-│   ├── nn_professional.ipynb   # Training notebook for professional model
-│   ├── nn_student.ipynb        # Training notebook for student model
+├── notebooks/                  # Jupyter notebooks for exploratory analysis and model training
+│   ├── nn_professional.ipynb   # Training notebook for professional demographic model
+│   ├── nn_student.ipynb        # Training notebook for student demographic model
+├── requirements.txt            # Python dependencies
+├── Dockerfile                  # Docker configuration
 ├── README.md                   # Project documentation
-├── requirements.txt            # Dependencies
+└── .gitignore                  # Ignored files and directories
 ```
+
+---
+
+## **How It Works**
+
+1. **Data Preprocessing**: The application preprocesses raw data from activity surveys, such as removing noise and normalizing input.  
+2. **Model Training**: Models are trained separately for different demographics (e.g., students and professionals) to improve prediction accuracy.  
+3. **API Integration**: The trained models are deployed using a Flask-based API, making them accessible for prediction requests.  
+4. **Continuous Learning**: Feedback data is incorporated via RAG to enhance the model's contextual understanding and response accuracy.  
+
+---
+
+## **Dependencies**
+
+All required dependencies are listed in `requirements.txt`. Key dependencies include:
+
+- **TensorFlow**: For building and training machine learning models.  
+- **Flask**: For creating the API to deploy the models.  
+- **Pandas**: For data manipulation and analysis.  
+- **scikit-learn**: For preprocessing and evaluation metrics.  
+
+---
+
+## **Contributing**
+
+Contributions are welcome! If you'd like to improve this project:  
+
+1. Fork the repository.  
+2. Create a feature branch.  
+3. Commit your changes.  
+4. Submit a pull request.  
