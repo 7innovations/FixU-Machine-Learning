@@ -75,14 +75,6 @@ FixU-Machine-Learning/
 
 ---
 
-## **How It Works**
-
-1. **Data Preprocessing**: The application preprocesses raw data from activity surveys, such as removing noise and normalizing input.  
-2. **Model Training**: Models are trained separately for different demographics (e.g., students and professionals) to improve prediction accuracy.  
-3. **API Integration**: The trained models are deployed using a Flask-based API, making them accessible for prediction requests.  
-4. **Continuous Learning**: Feedback data is incorporated via RAG to enhance the model's contextual understanding and response accuracy.  
-
----
 
 ## **Dependencies**
 
