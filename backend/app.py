@@ -3,21 +3,23 @@ import tensorflow as tf
 import pandas as pd
 import google.generativeai as genai
 import os
-import jwt
-from jwt import ExpiredSignatureError, InvalidTokenError
+import firebase_admin
+from firebase_admin import credentials, auth
 from dotenv import load_dotenv
 
 
 load_dotenv()
 
-SECRET_KEY = os.getenv('SECRET_KEY')
-if not SECRET_KEY:
-    raise ValueError("SECRET_KEY is not set in environment variables")
+try:
+    cred = credentials.Certificate('./serviceAccountKey.json')
+    firebase_admin.initialize_app(cred)
+except Exception as e:
+    print(f"Firebase initialization error: {e}")
+    raise
 
 API_KEY = os.getenv('API_KEY')
 if not API_KEY:
     raise ValueError("API_KEY is not set in environment variables")
-
 
 genai.configure(api_key=API_KEY)
 
@@ -65,25 +67,35 @@ professional_features = {
 
 app = Flask(__name__)
 
-def verify_jwt(token):
+def verify_firebase_token(token):
     try:
-        decoded = jwt.decode(token, SECRET_KEY, algorithms=["HS256"])
-        return decoded, None
-    except ExpiredSignatureError:
-        return None, "Token has expired"
-    except InvalidTokenError:
+        decoded_token = auth.verify_id_token(token)
+        return decoded_token, None
+    except auth.InvalidIdTokenError:
         return None, "Invalid token"
+    except auth.ExpiredIdTokenError:
+        return None, "Token has expired"
+    except Exception as e:
+        return None, f"Token verification error: {str(e)}"
+
 
 @app.before_request
 def check_token():
-    if request.endpoint not in ['home']:
-        token = request.headers.get('Authorization')
-        if not token or not token.startswith("Bearer "):
+    public_endpoints = ['home',]
+    
+    if request.endpoint not in public_endpoints:
+        auth_header = request.headers.get('Authorization')
+        if not auth_header or not auth_header.startswith("Bearer "):
             return jsonify({'error': 'Invalid or missing token'}), 401
-        token = token.split("Bearer ")[1]
-        decoded, error = verify_jwt(token)
-        if not decoded:
+        
+        token = auth_header.split("Bearer ")[1]
+        decoded_token, error = verify_firebase_token(token)
+        
+        if not decoded_token:
             return jsonify({'error': error}), 401
+        
+        request.user = decoded_token
+
 
 @app.route('/')
 def home():
@@ -117,12 +129,14 @@ def predict(user_type):
 
         df_input = pd.DataFrame([input_data])
 
+
         for col in df_input.columns:
             if col in ['Gender', 'Dietary Habits', 'Sleep Duration', 'Have you ever had suicidal thoughts ?',
                       'Family History of Mental Illness']:
                 df_input[col] = df_input[col].astype('category').cat.codes
             else:
                 df_input[col] = df_input[col].astype(float)
+
 
         probabilities = model.predict(df_input)
         probability = float(probabilities[0]) * 100
