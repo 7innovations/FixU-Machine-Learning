@@ -59,17 +59,17 @@ FixU-Machine-Learning/
 ├── backend/
 │   ├── models/
 │   │   ├── nn_professional.h5
-│   │   ├── nn_student.h5
-│   ├── app.py
-|   ├── Dockerfile
-|   └── .gitignore
+│   │   └── nn_student.h5
+│   ├── .env.example
+│   ├── .gitignore
+|   └── app.py
 ├── dataset/
-│   ├── depression.csv
+│   └── depression.csv
 ├── notebooks/
 │   ├── nn_professional.ipynb
-│   ├── nn_student.ipynb
-├── requirements.txt
-└── README.md
+│   └── nn_student.ipynb
+├── README.md
+└── requirements.txt
 
 ```
 
