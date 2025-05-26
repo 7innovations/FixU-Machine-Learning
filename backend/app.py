@@ -36,8 +36,8 @@ gemini_model = genai.GenerativeModel(
     generation_config=generation_config,
 )
 
-student_model = tf.keras.models.load_model('./models/nn_student.h5')
-professional_model = tf.keras.models.load_model('./models/nn_professional.h5')
+student_model = tf.keras.models.load_model('./models/ann_student.h5')
+professional_model = tf.keras.models.load_model('./models/ann_professional.h5')
 
 student_features = {
     'Gender': ['Male', 'Female'],
