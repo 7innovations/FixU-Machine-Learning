@@ -52,30 +52,6 @@ This will start the application and expose it on **port 8080**.
 
 ---
 
-## **Folder Structure**  
-
-```plaintext
-FixU-Machine-Learning/
-├── backend/
-│   ├── models/
-│   │   ├── nn_professional.h5
-│   │   └── nn_student.h5
-│   ├── .env.example
-│   ├── .gitignore
-|   └── app.py
-├── dataset/
-│   └── depression.csv
-├── notebooks/
-│   ├── nn_professional.ipynb
-│   └── nn_student.ipynb
-├── README.md
-└── requirements.txt
-
-```
-
----
-
-
 ## **Dependencies**
 
 All required dependencies are listed in `requirements.txt`. Key dependencies include:
