@@ -56,9 +56,8 @@ This will start the application and expose it on **port 8080**.
 
 All required dependencies are listed in `requirements.txt`. Key dependencies include:
 
-- **TensorFlow**: For building and training machine learning models.  
+- **TensorFlow**: For building and training deep learning models.
+- **Scikit Learn**: For preprocessing and evaluation metrics.  
 - **Flask**: For creating the API to deploy the models.  
-- **Pandas**: For data manipulation and analysis.  
-- **scikit-learn**: For preprocessing and evaluation metrics.  
 
 ---
