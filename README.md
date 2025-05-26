@@ -1,12 +1,12 @@
 # **FixU Machine Learning**
 
-**FixU Machine Learning** is a deep learning-powered solution designed to detect depression and support mental health initiatives. This repository contains backend, deep learning models, dataset, and notebook.
+**FixU Machine Learning** is a artificial neural network-powered solution designed to detect depression and support mental health initiatives. This repository contains notebooks, dataset, models and backend.
 
 ---
 
 ## **Features**  
 
-- **Depression Detection**: Implementing a Neural Network to predict depression based on user input. 
+- **Depression Detection**: Implementing a Artificial Neural Network to predict depression based on user input. 
 - **Feedback Loop**: Utilizes **Retrieval-Augmented Generation (RAG)** and retrains the **Gemini AI model** with updated data to ensure accurate and context-aware responses.  
 
 ---
@@ -56,7 +56,7 @@ This will start the application and expose it on **port 8080**.
 
 All required dependencies are listed in `requirements.txt`. Key dependencies include:
 
-- **TensorFlow**: For building and training deep learning models.
+- **TensorFlow**: For building and training models.
 - **Scikit Learn**: For preprocessing and evaluation metrics.  
 - **Flask**: For creating the API to deploy the models.  
 
